@@ -1,0 +1,564 @@
+/* -----------------------------обнуление стилей  -----------------------------*/
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-family: 'Montserrat', sans-serif;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	max-width: 100%;
+	max-height: 100%;
+}
+body {
+	line-height: 1;
+
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.wrapper{
+max-width: 1170px;
+margin: 0 auto;
+}
+
+/*-------------------------HEADER-----------------------------*/
+/*----------------Создание наваигационных ссылок(Меню)----------*/
+.img__logo{
+max-width: 50px;
+}
+.nav{
+    position: absolute;
+z-index: 10;
+opacity: 0;
+transition:all 1.5s ease 0s;
+}
+.nav._active{
+opacity:1;
+}
+
+ul.menu{
+	display: flex;
+	align-items: center;
+
+	
+}
+.menu li{
+	font-size:20px;
+	list-style-type: none;
+	padding: 40px 30px 40px 30px;
+}
+.menu li a{
+	text-decoration: none;
+	opacity: 0.9;
+	color: #ffffff;
+	
+}
+
+/*-------анимация при наведении------*/
+li:hover{
+	transform: scale(1.3);
+transition: .5s;
+}
+.menu li a:hover{
+	opacity: 1;
+}
+
+/*------------ видео фон ---------*/
+.full-screen{
+position: relative;
+min-height: 100vh;
+display:flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 50px 15px;
+}
+.full-screen__body{
+position: relative;
+z-index: 2;
+display: flex;
+
+justify-content: center;
+flex-direction: column;
+}
+.full-screen__title{
+font-size: 50px;
+letter-spacing:15px;
+text-align: center;
+font-weight: 700;
+margin:  0px 0px 20px 0px;
+color: #FFFFFF;
+opacity: 0;
+transition:all 1.5s ease 0s;
+}
+.full-screen__title._active{
+opacity:1;
+}
+.full-screen__text{
+	display:inherit;
+	flex-direction: column;
+	align-items: center;
+justify-content: center;
+font-size: 18px;
+color: #ffffff;
+opacity: 0;
+transform: translate(0px , 140%);
+transition:all 2s ease 0s;
+}
+.full-screen__text._active{
+opacity:1;
+transform: translate(0px , 0px);
+}
+.full-screen__video{
+position: absolute;
+top:0;
+left: 0;
+width: 100%;
+height:90%;
+object-fit:cover;
+}
+.full-screen__video__aboutUs {
+    width:100%;
+    object-fit:cover;
+    margin:50px;
+	opacity: 0;
+transition:all 2s ease 0s;
+    }
+    .full-screen__video__aboutUs._active{
+		opacity:1;
+		transform: translate(0px , 0px);
+	}
+
+/*------------Button-  ---------*/
+
+
+.button{
+	background: #4985FF;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25);
+	text-align: center;
+	border: 1px solid #4985FF;
+	padding: 10px;
+	margin: 20px;
+	position: fixed;
+	right: 45px;
+	bottom: 45px;
+	color:#ffffff;
+	font-size: 20px;
+}
+.button:hover{
+transform: scale(1.1);
+transition: .5s;
+}
+.button a{
+	text-decoration: none;
+	color:white;
+	font-size: 16px;}
+
+/*----------------------section о Клубе-----------------------------*/
+.section{
+    background:url(../img/section.jpg)no-repeat center/cover; 
+}
+.flexColumn_Content{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.h1{
+font-weight: bold;
+font-size: 36px;
+line-height: 53px;
+text-align: center;
+color: #323232;
+padding: 20px 0px 50px 0px;
+
+}
+.text__aboutus{
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+color: #0e0707;
+text-align: justify;
+text-transform: lowercase;
+}
+.text__aboutus b{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*-----------------преимущества Клуба---------------*/
+.flex_advantages{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+ padding-bottom: 60px;
+}
+.flex_advantages div b{
+	text-align:center;
+	font-size: 24px;
+	line-height: 20px;
+	font-weight: 600;
+}
+.block{
+	display: block;
+	width:28%;
+	padding: 20px;
+    border:2px solid rgb(255, 255, 255);
+}
+.flex_advantages .block:nth-child(1){
+	opacity:0;
+	transform: translate(-100% , -50%);
+}
+.flex_advantages .block:nth-child(2){
+	opacity:0;
+	transform: translate(0px , -120%);
+}
+.flex_advantages .block:nth-child(3){
+	opacity:0;
+	transform: translate(100% , -50%);
+}
+.flex_advantages .block:nth-child(4){
+	opacity:0;
+	transform: translate(-100% , 50%);
+}
+.flex_advantages .block:nth-child(5){
+	opacity:0;
+	transform: translate(0px , 120%);
+}
+.flex_advantages .block:nth-child(6){
+	opacity:0;
+	transform: translate(100% , 50%);
+}
+/* ----------------_active------------------- */
+.flex_advantages._active .block{
+	transition: all 1.5s ease 0.2s;
+	opacity: 1;
+	transform: translate( 0px , 0px);
+}
+
+
+.flex_advantages div p{ 
+font-weight: normal;
+font-size: 24px;
+line-height: 25px;
+text-align:justify;
+color: #030207;
+padding: 10px;
+}
+
+/*                 slider               */
+.slider{
+    border: 2px solid black;
+     max-width: 80%;
+    margin:20px;
+     overflow: hidden;
+ }
+ .slider-line{
+     display: flex;
+     transition: all ease 1s;
+ }
+ #Slider-flex{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .slider-next{
+     font-size: 35px;
+     color: rgb(0, 0, 0);
+     cursor: pointer;
+ }
+ .slider-next:hover{
+	transform: scale(1.3);
+transition: .5s;
+ }
+ .slider-prev{
+     font-size: 35px;
+     color: rgb(0, 0, 0);
+     cursor: pointer; 
+ }
+ .slider-prev:hover{
+	transform: scale(1.3);
+transition: .5s;
+	
+ }
+/* -------section__table часть с расписанием и стоимостью -----------*/
+
+.section__table{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background:url(../img/section__table.jpg)no-repeat center/cover; 
+}
+.table{
+	 /* width: 1000px; */
+	height:400px; 
+	width:100%;
+	padding:20px;
+}
+.table  th,td{
+	border:1px solid black;
+	font-size: 24px;
+	line-height: 25px;
+	width:33%;
+	text-align: center;
+	height:20%;
+}
+ /* ----------------------стоимость------------------ */
+.text__price{
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+color: #0e0707;
+text-align: center;
+padding-bottom:60px;
+}
+.link{
+	text-decoration: none;
+	color:#0e0707;
+	border-bottom: 1px solid;
+}
+/* -------------------------section about Coaches ---------------------------*/
+.section__coaches{
+background:url(../img/russia3.jpg)no-repeat center/cover; 
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.flex__row{
+	display: flex;
+	max-width: 100%;
+}
+.block__coach{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	padding: 20px;
+}
+.flex__row .block__coach:nth-child(1){
+	opacity:0;
+	transform: translate(-50% , 0px);
+}
+.flex__row .block__coach:nth-child(2){
+	opacity:0;
+	transform: translate(50% , 0px);
+	
+}
+/* --------------------_active ----------------*/
+.flex__row._active .block__coach{
+	transition: all 1.5s ease 0.2s;
+	opacity: 1;
+	transform: translate( 0px , 0px);
+}
+
+.img__coach{
+	width: 50%;
+	border-radius: 50%;  
+    border: 2px solid #0c0a0a; 
+    box-shadow: 2px 1px 5px #999999; 
+}
+.img__coach:hover{
+	transition: .5s;
+	transform: scale(1.05);
+}
+.name__coach{
+color: #FFFFFF;
+font-weight: bold;
+font-size: 26px;
+line-height: 25px;
+text-align: center;
+}
+.about__coach{
+color: #c8c4ff;
+font-size: 20px;
+line-height: 25px;
+text-align: center;
+padding: 10px;
+}
+/* -------------------luch brend section ---------------------*/
+.section__brend{
+	background-color: #464545;
+}
+.text__brend{
+	font-size: 24px;
+	text-align: justify;
+	line-height: 30px;
+	color:#FFFFFF;
+	
+}
+.content__brend{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	
+}
+.video__brend{
+	width:45%;
+	padding:20px;
+	opacity:0;
+	transform: translate(-100% , 0px);
+}
+.video__brend._active{
+	transition: all 1.5s ease 0.2s;
+	opacity: 1;
+	transform: translate( 0px , 0px);
+}
+.block__brend{
+	display: flex;
+	flex-direction: column;
+	width:45%;
+	height:100%;
+}
+
+.block__brend .img__brend:nth-child(1){
+	opacity:0;
+	transform: translate(100% , -50%);
+	padding-bottom:20px;
+}
+.block__brend .img__brend:nth-child(2){
+	opacity:0;
+	transform: translate(100% , 50%);
+	padding-top:20px;
+}
+.block__brend._active .img__brend{
+	transition: all 1.5s ease 0.2s;
+	opacity: 1;
+	transform: translate( 0px , 0px);
+}
+/* -----------------------foter------------------------- */
+
+.text__footer{
+line-height: 25px;
+font-size: 22px;
+text-align: justify;
+}
+.map{
+	display: block;
+}
+.footer__text{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.footer__content{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+}
+.img_link{
+	width:60%;
+
+}
+
+@media only screen and (max-width:1170px) {
+	.wrapper{
+		max-width: 970px;
+		}
+	.full-screen__title{
+		font-size: 30px;
+	}
+		
+}
+@media only screen and (max-width:992px) {
+	.wrapper{
+		max-width: 750px;
+		}
+		.menu{
+			flex-direction: column;
+			margin:0 auto;
+			
+		}
+		.menu li {
+			
+			font-size: 12px;
+			padding: 10px;
+			}
+			.menu li a{
+			
+				font-weight: 600;
+			}
+			.img_link{
+				display: none;
+			}
+}
+
+@media only screen and (max-width:767px) {
+	.wrapper{
+		max-width: 620px;
+		}
+		.block{
+			width:80%;
+		}
+}
+@media only screen and (max-width:600px) {
+	.wrapper{
+		max-width: 400px;
+		}
+		.full-screen__title{
+			font-size: 30px;
+			letter-spacing:0px;
+		}
+		.h1{
+			font-size: 28px;
+		}
+		.name__coach{
+			font-size: 18px;
+		}
+		.about__coach{
+			font-size: 14px;
+		}
+		.text__footer, .text__aboutus, .text__price, .text__brend, .table th,td{
+			font-size: 16px;
+		}
+		.block__coach{
+			width:40%;
+		}
+		.button{
+			width:40px;
+			height: 40px;
+		}
+		.flex_advantages div b{
+			font-size: 18px;
+		}
+		.flex_advantages div p{
+			font-size: 14px;
+		}
+		
+}
+@media(max-width:430px) {
+	.wrapper{
+		max-width: 350px;
+		}
+}
+@media(max-width:367px) {
+	.wrapper{
+		max-width: 250px;
+		}
+}
